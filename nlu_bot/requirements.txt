@@ -1,0 +1,6 @@
+rasa==3.6.16
+rasa-sdk==3.6.2
+faiss-cpu
+sentence-transformers
+streamlit
+python==3.9

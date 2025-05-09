@@ -1,0 +1,23 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+
+- intent: ask_info
+  examples: |
+    - What MS programs does UTD offer?
+    - How to contact JSOM advising?
+    - Tell me about the business analytics course
+    - Who can I talk to about financial aid?
+    - Give me information on the MBA program
+    - I want to learn about scholarships

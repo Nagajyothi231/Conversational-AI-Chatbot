@@ -1,0 +1,39 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_info
+  - give_feedback  # ✅ NEW intent for 👍 or 👎
+
+slots:
+  last_user_query:
+    type: text
+    influence_conversation: false
+  last_bot_response:
+    type: text
+    influence_conversation: false
+  feedback:
+    type: text
+    influence_conversation: false
+
+actions:
+  - action_search_faiss
+  - action_collect_feedback  # ✅ NEW action
+
+responses:
+  utter_greet:
+    - text: "Hey! How can I assist you with UTD info today? 🎓"
+
+  utter_goodbye:
+    - text: "Bye! Let me know if you need anything else later. 👋"
+
+  utter_default:
+    - text: "Sorry, I didn’t understand that. Can you rephrase?"
+
+  utter_ask_feedback:  # ✅ NEW response after each answer
+    - text: "Was this helpful? (👍 or 👎)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

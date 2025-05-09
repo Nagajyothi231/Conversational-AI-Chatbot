@@ -1,0 +1,20 @@
+version: "3.1"
+
+stories:
+- story: greet and info
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: ask for info and feedback
+  steps:
+    - intent: ask_info
+    - action: action_search_faiss
+    - action: utter_ask_feedback  # ask for feedback
+    - intent: give_feedback       # user gives feedback (👍 or 👎)
+    - action: action_collect_feedback
+
+- story: say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye

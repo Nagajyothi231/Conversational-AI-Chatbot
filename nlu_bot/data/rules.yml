@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+- rule: respond to greeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: respond to goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: respond to UTD info questions
+  steps:
+    - intent: ask_info
+    - action: action_search_faiss
+    - action: utter_ask_feedback
+
+- rule: handle feedback
+  steps:
+    - intent: give_feedback
+    - action: action_collect_feedback
